@@ -19,22 +19,22 @@ class TestStatisticsService(unittest.TestCase):
             PlayerReaderStub()
         )
 
-    def test_search_returns_correct_name(self):
+    def test_oikea_nimi(self):
         player = self.stats.search("esimerkki5")
         self.assertEqual(player.name, "esimerkki5")
 
-    def test_wrong_search_returns_none(self):
+    def test_väärä_palautus(self):
         player = self.stats.search("Gretski")
         self.assertEqual(player, None)
 
-    def test_team_returns_correct_players(self):
+    def test_oikea_pelaaja_tiimiltä(self):
         players_of_1 = self.stats.team("1")
         self.assertEqual(len(players_of_1), 3) # len = 3
 
         players_of_2 = self.stats.team("2")
         self.assertEqual(len(players_of_2), 1) # len = 1
 
-    def test_top_points_correct(self):
+    def test_parhaat_pistett(self):
         top_scorers = self.stats.top(2)
         self.assertEqual(top_scorers[0].name, "esimerkki5")
         self.assertEqual(top_scorers[1].name, "esimerkki2")
@@ -44,16 +44,16 @@ class TestStatisticsService(unittest.TestCase):
         self.assertEqual(top_scorers[0].name, "esimerkki5")
         self.assertEqual(top_scorers[1].name, "esimerkki2")
 
-    def test_top_goals_correct(self):
+    def test_parhaat_maalit(self):
         top_goal_scorers = self.stats.top(2, SortBy.GOALS)
         self.assertEqual(top_goal_scorers[0].name, "esimerkki2")
         self.assertEqual(top_goal_scorers[1].name, "esimerkki4")
 
-    def test_top_assists_correct(self):
+    def test_parhaat_assistetut(self):
         top_assists = self.stats.top(2, SortBy.ASSISTS)
         self.assertEqual(top_assists[0].name, "esimerkki5")
         self.assertEqual(top_assists[1].name, "esimerkki4")
 
-    def test_top_with_wrong_(self):
+    def test_feilit(self):
         top_nothings = self.stats.top(2, 7)
         self.assertIsNone(top_nothings)
