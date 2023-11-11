@@ -24,6 +24,8 @@ class ProjectReader:
         # Luo Project-olio annetuista tiedoista
         project = Project(
             name= toml_data.get("tool", {}).get("poetry", {}).get("name", ""),
+            license= toml_data.get("tool", {}).get("poetry", {}).get("license", ""),
+            authors= toml_data.get("tool", {}).get("poetry", {}).get("authors", []),
             description= toml_data.get("tool", {}).get("poetry", {}).get("description", ""),
             dependencies= toml_data.get("tool", {}).get("poetry", {}).get("dependencies", []),
             dev_dependencies= toml_data.get("tool", {}).get("poetry", {}).get("group", {}).get("dev", {}).get("dependencies", []),
