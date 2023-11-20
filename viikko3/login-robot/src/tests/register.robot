@@ -19,7 +19,7 @@ Register With Already Taken Username And Valid Password
     Output Should Contain  User with username kalle already exists
 
 Register With Too Short Username And Valid Password
-    Input Credentials  ka  kalle123
+    Input Credentials  ks  kalle123
     Output Should Contain  Username too short
 
 Register With Enough Long But Invalid Username And Valid Password
