@@ -1,3 +1,5 @@
+import re
+import pdb
 from entities.user import User
 
 
@@ -14,6 +16,7 @@ class UserService:
         self._user_repository = user_repository
 
     def check_credentials(self, username, password):
+        
         if not username or not password:
             raise UserInputError("Username and password are required")
 
@@ -36,5 +39,12 @@ class UserService:
     def validate(self, username, password):
         if not username or not password:
             raise UserInputError("Username and password are required")
-
+        if len(username) < 3:
+            raise UserInputError("Username too short")
+        if not re.match("^[a-z]+$", username):
+            raise UserInputError("Username contains invalid characters")
+        if len(password)<8:
+            raise UserInputError("Password too short")
+        if re.match("^[a-z]+$", password.lower()):
+            raise UserInputError("Password consists of only letters")
         # toteuta loput tarkastukset tänne ja nosta virhe virhetilanteissa
