@@ -1,0 +1,4 @@
+Retrospektiivit ovat projektitiimien tapaaminen projektin tai prosessin päätteeksi arvioidakseen, mikä sujui hyvin ja mitä voisimme parantaa. Keskusteluissa käsitellään onnistumisia, parannusehdotuksia ja miten opit voitaisiin hyödyntää tulevissa projekteissa. Kaksi retrospektiivitekniikkaa, joita haluamme tarkastella ovat:  "Start, Stop, Continue, More of, Less of Wheel" ja "Glad, Sad, Mad". 
+
+"Start, Stop, Continue, More of, Less of Wheel" -tekniikassa tiimi määrittelee, mitä tulisi aloittaa, lopettaa, jatkaa, tehdä enemmän tai vähemmän. Se siis auttaa tiimiä tekemään konkreettisia päätöksiä parannuksista. "
+Glad, Sad, Mad" -tekniikassa tiimi jakaa huomiot iloihin, suruihin ja turhautumisiin. Ja tämä taas auttaa meidän tiimiä tunnistamaan positiiviset ja negatiiviset näkökulmat ja oppimaan virheistö. Nämä yksinkertaiset, mutta tehokkaat tekniikat tarjoavat rakenteen tiimille arvioida työtään avoimesti ja tehdä tarvittavia parannuksia.
