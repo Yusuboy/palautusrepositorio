@@ -25,14 +25,13 @@ class TestKassapaate(unittest.TestCase):
         maksukortti_mock.osta.assert_not_called()
 
 
-    def lataus_kun_positiivinen(self):
+    def test_lataus_kun_positiivinen(self):
         maksukortti_mock = Mock()
         self.kassa.lataa(maksukortti_mock,1)
-        maksukortti_mock.osta.assert_called_with(1)
+        maksukortti_mock.lataa.assert_called_with(1)
 
     
-    def lataus_kun_negatiivinen(self):
+    def test_lataus_kun_negatiivinen(self):
         maksukortti_mock = Mock()
         self.kassa.lataa(maksukortti_mock,-1)
-        maksukortti_mock.osta.assert_called_with(-1)
         maksukortti_mock.lataa.assert_not_called()
