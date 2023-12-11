@@ -10,16 +10,16 @@ class Komento(Enum):
 
 
 class Kayttoliittyma:
-    def __init__(self, sovelluslogiikka, root):
-        self._sovelluslogiikka = sovelluslogiikka
+    def __init__(self, sovellus, root):
+        self._sovelluslogiikka = sovellus
         self._root = root
         self._tila_historia = []
 
         self._komennot = {
-            Komento.SUMMA: Summa(sovelluslogiikka, self._lue_syote),
-            Komento.EROTUS: Erotus(sovelluslogiikka, self._lue_syote),
-            Komento.NOLLAUS: Nollaus(sovelluslogiikka, self._lue_syote),
-            Komento.KUMOA: Kumoa(sovelluslogiikka, self._lue_syote)
+            Komento.SUMMA: Summa(sovellus, self._lue_syote),
+            Komento.EROTUS: Erotus(sovellus, self._lue_syote),
+            Komento.NOLLAUS: Nollaus(sovellus, self._lue_syote),
+            Komento.KUMOA: Kumoa(sovellus, self._lue_syote)
         }
 
     def kaynnista(self):
@@ -99,14 +99,6 @@ class Summa:
         self.sovelluslogiikka.aseta_arvo(tulos)
 
 
-class Nollaus:
-    def __init__(self, sovelluslogiikka, lue_syote):
-        self.sovelluslogiikka = sovelluslogiikka
-        self.lue_syote = lue_syote
-
-    def suorita(self):
-        self.sovelluslogiikka.nollaa()
-
 
 class Erotus:
     def __init__(self, sovelluslogiikka, lue_syote):
@@ -117,6 +109,18 @@ class Erotus:
         luku1 = int(self.lue_syote())
         tulos = self.sovelluslogiikka.arvo() - luku1
         self.sovelluslogiikka.aseta_arvo(tulos)
+
+
+class Nollaus:
+    def __init__(self, sovelluslogiikka, lue_syote):
+        self.sovelluslogiikka = sovelluslogiikka
+        self.lue_syote = lue_syote
+
+    def suorita(self):
+        self.sovelluslogiikka.nollaa()
+
+
+
 
 class Kumoa:
     def __init__(self, sovelluslogiikka, lue_syote):
