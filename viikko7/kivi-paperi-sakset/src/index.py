@@ -1,6 +1,6 @@
 from vs import KPSPelaajaVsPelaaja
 from kps_tekoaly import KPSTekoaly
-from kps import KiviPaperiSakset
+from kps_pelaaja_vs_pelaaja import KiviPaperiSakset
 
 def main():
     valinnat = {
